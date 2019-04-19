@@ -24,7 +24,7 @@ public class Cart {
 	@Column(name = "cart_id")
 	private Integer cartId;
 	
-	@Column(name = "cart_id")
+	@Column(name = "time")
 	private Long time;
 	
 	@ManyToOne(targetEntity = User.class)
