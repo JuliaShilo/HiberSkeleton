@@ -22,7 +22,7 @@ public class Cart {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "cart_id")
-	private Integer cartId;
+	private Integer id;
 	
 	@Column(name = "time")
 	private Long time;

@@ -2,43 +2,51 @@ package org.itstep.dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+import javax.persistence.QueryHint;
+
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.itstep.entity.User;
 
-public class UserDAO extends EntityDAO<User>{
-
-	@Override
-	public void save(User entity) {
-		Session session = super.getSession();
+public class UserDAO{
+	
+	private static Session getSession() {
+		return HibernateFactory.getSessionFactory().openSession();
+	}
+	
+	public static void saveOrUpdate(User user){
+		Session session = getSession();
         session.getTransaction().begin();
-        session.save(entity);
-//        session.saveOrUpdate(entity);
+        session.saveOrUpdate(user);
         session.getTransaction().commit();
         session.close();		
 	}
-
-	@Override
-	public User findOne(User entity) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public static User findOne(Integer id){
+		Session session = getSession();
+        session.getTransaction().begin();
+        User userFromDB = (User)session.find(User.class, id);
+        session.getTransaction().commit();
+        session.close();
+        return userFromDB;
 	}
 
-	@Override
-	public List<User> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public static List<User> findAll(){
+		Session session = getSession();
+        session.getTransaction().begin();
+        
+        String sql = "SELECT * FROM users";
+        List<User> result = session.createNativeQuery(sql).getResultList();
+        return result;
 	}
-
-	@Override
-	public void update(User entity) {
-		// TODO Auto-generated method stub
-		
+	
+	public static void delete(User user) {
+		Session session = getSession();
+        session.getTransaction().begin();
+        session.delete(user);
+        session.getTransaction().commit();
+        session.close();
 	}
-
-	@Override
-	public void delete(User entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 }

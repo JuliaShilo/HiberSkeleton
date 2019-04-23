@@ -18,12 +18,12 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "users")
-public class User implements Serializable{
+public class User{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "user_id")
-	private Integer userId;
+	private Integer id;
 	
 	@Column(name = "login")
 	private String login;
@@ -45,4 +45,15 @@ public class User implements Serializable{
 	
 	public User() {
 	}
+
+	public User(String login, String password, String email, String firstName, String lastName, Profile profile) {
+		this.login = login;
+		this.password = password;
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.profile = profile;
+	}
+	
+	
 }
