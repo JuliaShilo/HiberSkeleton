@@ -16,10 +16,10 @@ public class HibernateFactory {
 		Configuration configuration = new Configuration().configure();
 //      Configuration configuration = new Configuration();
 
-		configuration.addAnnotatedClass(Item.class);
-		configuration.addAnnotatedClass(User.class);
-		configuration.addAnnotatedClass(Order.class);
-		configuration.addAnnotatedClass(Cart.class);
+//		configuration.addAnnotatedClass(Item.class);
+//		configuration.addAnnotatedClass(User.class);
+//		configuration.addAnnotatedClass(Order.class);
+//		configuration.addAnnotatedClass(Cart.class);
 
 		return configuration.buildSessionFactory();
 	}
