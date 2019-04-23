@@ -28,13 +28,13 @@
         <property name="hbm2ddl.auto">update</property>
 
         <!-- ENTITIES -->
-       
+        <!--
         <mapping package="org.itstep.entity"/>
         <mapping class="org.itstep.entity.User"/>
         <mapping class="org.itstep.entity.Item"/>
         <mapping class="org.itstep.entity.Order"/>
         <mapping class="org.itstep.entity.Cart"/>
-       
+       	-->
         
     </session-factory>
 
