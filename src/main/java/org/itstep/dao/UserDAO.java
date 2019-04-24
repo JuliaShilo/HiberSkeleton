@@ -2,21 +2,16 @@ package org.itstep.dao;
 
 import java.util.List;
 
-import javax.persistence.Query;
-import javax.persistence.QueryHint;
-
-import org.hibernate.SQLQuery;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.itstep.entity.User;
 
 public class UserDAO{
 	
-	private static Session getSession() {
-		return HibernateFactory.getSessionFactory().openSession();
-	}
+	private static final SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
 	
 	public static void saveOrUpdate(User user){
-		Session session = getSession();
+		Session session = sessionFactory.openSession();
         session.getTransaction().begin();
         session.saveOrUpdate(user);
         session.getTransaction().commit();
@@ -24,7 +19,7 @@ public class UserDAO{
 	}
 	
 	public static User findOne(Integer id){
-		Session session = getSession();
+		Session session = sessionFactory.openSession();
         session.getTransaction().begin();
         User userFromDB = (User)session.find(User.class, id);
         session.getTransaction().commit();
@@ -33,7 +28,7 @@ public class UserDAO{
 	}
 
 	public static List<User> findAll(){
-		Session session = getSession();
+		Session session = sessionFactory.openSession();
         session.getTransaction().begin();
         
         String sql = "SELECT * FROM users";
@@ -42,7 +37,7 @@ public class UserDAO{
 	}
 	
 	public static void delete(User user) {
-		Session session = getSession();
+		Session session = sessionFactory.openSession();
         session.getTransaction().begin();
         session.delete(user);
         session.getTransaction().commit();
