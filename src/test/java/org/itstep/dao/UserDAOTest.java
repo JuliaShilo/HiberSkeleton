@@ -48,7 +48,23 @@ public class UserDAOTest {
 
 	@Test
 	public void testFindAll() {
-//		fail("Not yet implemented");
+
+		User user1 = new User(11, "test_login", "pass", "e-mail@ukr.com", "Alex", "Ignatenko", Profile.CLIENT);
+		User user2 = new User(12, "test_login", "pass", "e-mail@ukr.com", "Alex", "Ignatenko", Profile.CLIENT);
+		User user3 = new User(13, "test_login", "pass", "e-mail@ukr.com", "Alex", "Ignatenko", Profile.CLIENT);
+		
+		testUsers.add(user1);
+		testUsers.add(user2);
+		testUsers.add(user3);
+		
+		UserDAO.saveOrUpdate(user1);
+		UserDAO.saveOrUpdate(user2);
+		UserDAO.saveOrUpdate(user3);
+		
+		List<User> users = UserDAO.findAll();
+		assertNotNull(users);
+		assertEquals(3, users.size());
+		
 	}
 
 }

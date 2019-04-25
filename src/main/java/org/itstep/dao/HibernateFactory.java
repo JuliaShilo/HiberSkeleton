@@ -23,7 +23,7 @@ public class HibernateFactory {
         		Properties properties = new Properties();
 
         		properties.setProperty("hibernate.connection.driverClassName", "org.h2.Driver");
-        		properties.setProperty("hibernate.connection.url", "jdbc:h2:~/e-store-final");
+        		properties.setProperty("hibernate.connection.url", "jdbc:h2:~/e-store");
         		properties.setProperty("hibernate.connection.username", "alex");
         		properties.setProperty("hibernate.connection.password", "pass");
         		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");

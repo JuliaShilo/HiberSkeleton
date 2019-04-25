@@ -20,8 +20,8 @@ import lombok.Setter;
 public class Cart {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "cart_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Integer id;
 	
 	@Column(name = "time")

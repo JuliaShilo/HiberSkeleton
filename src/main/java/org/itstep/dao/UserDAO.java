@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.NativeQuery;
 import org.itstep.entity.User;
 
 public class UserDAO{
@@ -32,6 +33,7 @@ public class UserDAO{
         session.getTransaction().begin();
         
         String sql = "SELECT * FROM users";
+              
         List<User> result = session.createNativeQuery(sql).getResultList();
         return result;
 	}
