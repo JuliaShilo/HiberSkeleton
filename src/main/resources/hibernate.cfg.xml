@@ -9,8 +9,8 @@
 
         <!-- H2 database connection settings -->
         <property name="connection.driver_class">org.h2.Driver</property>
-        <property name="connection.url">jdbc:h2:~/step_qa</property>
-        <property name="connection.username">alex</property>
+        <property name="connection.url">jdbc:h2:~/step_qa_2</property>
+        <property name="connection.username">julia</property>
         <property name="connection.password">123456</property>
         <property name="hibernate.default_schema">PUBLIC</property>
         <property name="dialect">org.hibernate.dialect.H2Dialect</property>
@@ -25,13 +25,13 @@
         <property name="hbm2ddl.auto">update</property>
 
         <!-- ENTITIES -->
-        <!--
+
         <mapping package="org.itstep.entity"/>
         <mapping class="org.itstep.entity.User"/>
         <mapping class="org.itstep.entity.Item"/>
         <mapping class="org.itstep.entity.Order"/>
         <mapping class="org.itstep.entity.Cart"/>
-       	-->
+
         
     </session-factory>
 
