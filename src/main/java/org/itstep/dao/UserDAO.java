@@ -35,6 +35,8 @@ public class UserDAO{
         String sql = "SELECT * FROM users";
               
         List<User> result = session.createNativeQuery(sql).getResultList();
+        session.getTransaction().commit();
+        session.close();
         return result;
 	}
 	

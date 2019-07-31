@@ -6,7 +6,7 @@ import org.itstep.entity.User;
 
 public class App {
 	public static void main(String[] args) {
-		User user = new User("test_login", "pass", "e-mail@ukr.com", "Alex", "Ignatenko", Profile.CLIENT);
+		User user = new User("test_login", "pass", "e-mail@ukr.com", "Julia", "Shilo", Profile.CLIENT);
 		UserDAO.saveOrUpdate(user);
 	}
 }

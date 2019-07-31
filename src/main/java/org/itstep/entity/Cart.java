@@ -10,29 +10,29 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "carts")
 public class Cart {
 
 	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+//	@Column(name = "id")
 	private Integer id;
 	
-	@Column(name = "time")
+//	@Column(name = "time")
 	private Long time;
 	
 	@ManyToOne(targetEntity = User.class)
 	private User user;
 	
-	@Column(name = "status")
+//	@Column(name = "status")
 	private Status status;
-	
-	public Cart() {
-	}
+
 }

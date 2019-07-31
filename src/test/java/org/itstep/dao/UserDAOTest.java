@@ -18,7 +18,7 @@ public class UserDAOTest {
 
 	@BeforeAll
 	public static void setUpBeforeClass() throws Exception {
-		User user = new User(1, "test_login", "pass", "e-mail@ukr.com", "Alex", "Ignatenko", Profile.CLIENT);
+		User user = new User(1,"test_login", "pass", "e-mail@ukr.com", "Julia", "Shilo", Profile.CLIENT);
 		testUsers.add(user);
 	}
 
@@ -49,9 +49,9 @@ public class UserDAOTest {
 	@Test
 	public void testFindAll() {
 
-		User user1 = new User(11, "test_login", "pass", "e-mail@ukr.com", "Alex", "Ignatenko", Profile.CLIENT);
-		User user2 = new User(12, "test_login", "pass", "e-mail@ukr.com", "Alex", "Ignatenko", Profile.CLIENT);
-		User user3 = new User(13, "test_login", "pass", "e-mail@ukr.com", "Alex", "Ignatenko", Profile.CLIENT);
+		User user1 = new User(11, "test_login", "pass", "e-mail@ukr.com", "Julia", "Shilo", Profile.CLIENT);
+		User user2 = new User(12, "test_login", "pass", "e-mail@ukr.com", "Julia", "Shilo", Profile.CLIENT);
+		User user3 = new User(13, "test_login", "pass", "e-mail@ukr.com", "Julia", "Shilo", Profile.CLIENT);
 		
 		testUsers.add(user1);
 		testUsers.add(user2);
@@ -63,7 +63,7 @@ public class UserDAOTest {
 		
 		List<User> users = UserDAO.findAll();
 		assertNotNull(users);
-		assertEquals(3, users.size());
+		assertTrue(users.size() >= 3);
 		
 	}
 

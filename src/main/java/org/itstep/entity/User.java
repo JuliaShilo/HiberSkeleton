@@ -9,40 +9,40 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
 
 	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+//	@Column(name = "id")
 	private Integer id;
 
-	@Column(name = "login")
+//	@Column(name = "login")
 	private String login;
 
-	@Column(name = "password")
+//	@Column(name = "password")
 	private String password;
 
-	@Column(name = "email")
+//	@Column(name = "email")
 	private String email;
 
-	@Column(name = "first_name")
+//	@Column(name = "first_name")
 	private String firstName;
 
-	@Column(name = "last_name")
+//	@Column(name = "last_name")
 	private String lastName;
 
-	@Column(name = "profile")
+//	@Column(name = "profile")
 	private Profile profile;
 
-	public User() {
-	}
 
 	public User(String login, String password, String email, String firstName, String lastName, Profile profile) {
 		this.login = login;
@@ -52,5 +52,6 @@ public class User {
 		this.lastName = lastName;
 		this.profile = profile;
 	}
+
 
 }

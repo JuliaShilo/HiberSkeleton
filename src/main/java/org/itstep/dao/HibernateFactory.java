@@ -18,20 +18,20 @@ public class HibernateFactory {
 	public static SessionFactory getSessionFactory() {
 		if (sessionFactory == null) {
             try {
-            	Configuration configuration = new Configuration();
+            	Configuration configuration = new Configuration().configure();
 
         		Properties properties = new Properties();
 
-        		properties.setProperty("hibernate.connection.driverClassName", "org.h2.Driver");
-        		properties.setProperty("hibernate.connection.url", "jdbc:h2:~/e-store");
-        		properties.setProperty("hibernate.connection.username", "alex");
-        		properties.setProperty("hibernate.connection.password", "pass");
-        		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
-        		properties.setProperty("hibernate.hbm2ddl.auto", "update");
-        		properties.setProperty("hibernate.show_sql", "true");
-        		properties.setProperty("hibernate.format_sql", "true");
-
-        		configuration.addProperties(properties);
+//        		properties.setProperty("hibernate.connection.driverClassName", "org.h2.Driver");
+//        		properties.setProperty("hibernate.connection.url", "jdbc:h2:~/step_qa_2");
+//        		properties.setProperty("hibernate.connection.username", "julia");
+//        		properties.setProperty("hibernate.connection.password", "123456");
+//        		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+//        		properties.setProperty("hibernate.hbm2ddl.auto", "update");
+//        		properties.setProperty("hibernate.show_sql", "true");
+//        		properties.setProperty("hibernate.format_sql", "true");
+//
+//        		configuration.addProperties(properties);
 
         		configuration.addAnnotatedClass(Item.class);
         		configuration.addAnnotatedClass(User.class);
