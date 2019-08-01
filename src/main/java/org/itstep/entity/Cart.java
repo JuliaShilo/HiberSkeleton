@@ -22,17 +22,17 @@ import lombok.Setter;
 public class Cart {
 
 	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private Integer id;
 	
-//	@Column(name = "time")
+	@Column(name = "time")
 	private Long time;
 	
 	@ManyToOne(targetEntity = User.class)
 	private User user;
 	
-//	@Column(name = "status")
+	@Column(name = "status")
 	private Status status;
 
 }

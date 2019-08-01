@@ -21,20 +21,20 @@ import lombok.Setter;
 public class Item {
 
 	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private Integer id;
 	
-//	@Column(name = "article")
+	@Column(name = "article")
 	private String article;
 	
-//	@Column(name = "name")
+	@Column(name = "name")
 	private String name;
 	
-//	@Column(name = "price")
+	@Column(name = "price")
 	private Integer price;
 	
-//	@Column(name = "init_price")
+	@Column(name = "init_price")
 	private Integer initPrice;
 
 }

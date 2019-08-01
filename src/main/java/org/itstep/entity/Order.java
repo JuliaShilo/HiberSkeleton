@@ -22,14 +22,14 @@ import lombok.Setter;
 public class Order {
 
 	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private Integer id;
 	
 	@ManyToOne(targetEntity = Item.class)
 	private Item item;
 	
-//	@Column(name = "amount")
+	@Column(name = "amount")
 	private Integer amount;
 	
 	@ManyToOne(targetEntity = Cart.class)
